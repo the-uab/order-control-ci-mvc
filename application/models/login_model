@@ -1,0 +1,40 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class Login_model extends CI_Model {
+
+   public function __construct()
+    {
+        parent::__construct();
+       
+    }
+
+   public function validar($us,$pss){
+        
+     $query = $this->db->get_where('usuario',array(
+            'user' => $us,
+            'password' => $pss));
+        if ($query->num_rows() == 1) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function validado($us,$pass){
+        $query = $this->db->get_where('usuario',array(
+            'user' => $this->input->post('user'),
+            'password' => $this->input->post('pass')
+            ));
+        if ($query->num_rows() == 1) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+ 
+ 
+   
+}
