@@ -6,7 +6,9 @@
 		<tr>
 			<th><label for="rol">Rol : </label></th>
 			<th><input type="text" name="rol" id="rol"></th>
+
 		</tr>
+		
 		<tr >
 			
 			<th colspan="2"><button id="submitrol" class="btn btn-success">Registrar</button></th>
@@ -16,11 +18,13 @@
 	<?php echo form_close(); ?>
 
 </div>
-<div align ="center">
+<hr>
+<div align ="center" class="shor">
 	<table class="table table-bordered">
-		<tr>
+		<tr class="title-table">
 			<th>Id</th>
 			<th>Rol</th>
+			<td colspan="2">Accion</td>
 		</tr>
 	<?php foreach ($record as $value) {
 		echo '<tr>';

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2015 a las 16:03:55
+-- Tiempo de generación: 18-06-2015 a las 14:48:03
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `roles` (
 `IdRol` int(11) NOT NULL,
   `Rol` varchar(100) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=12 ;
 
 --
 -- Volcado de datos para la tabla `roles`
@@ -41,7 +41,9 @@ INSERT INTO `roles` (`IdRol`, `Rol`) VALUES
 (4, 'Tesorero'),
 (5, 'RRhh'),
 (7, 'Decano'),
-(9, 'Docente');
+(9, 'Docente'),
+(10, 'Estudiante'),
+(11, 'Rector');
 
 -- --------------------------------------------------------
 
@@ -54,17 +56,20 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `nombre` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `user` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
-  `password` varchar(200) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=9 ;
+  `password` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
+  `IdRol` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`idusuario`, `nombre`, `email`, `user`, `password`) VALUES
-(8, 'Sergio Cusi Nuñez', 'samichoanghelo@gmail.com', 'sergio', '8c4ba69d604a7af6752b4da298433d2d90ae2556'),
-(6, 'luis', 'luis@gmal.com', 'lpoma', 'f1c3e3b5c970e5bc463525db077eb417d8cb046e'),
-(7, 'Franco', 'franco@uab.com', 'fanco', '4855777d3c6ee85faf166cc729e258d102e9c592');
+INSERT INTO `usuario` (`idusuario`, `nombre`, `email`, `user`, `password`, `IdRol`) VALUES
+(1, 'sergio cusi', 'scusi@live.com', 'scusi', '81fe8bfe87576c3ecb22426f8e57847382917acf', 1),
+(5, 'Pablo', 'pa@live.com', 'pabs', '8cb2237d0679ca88db6464eac60da96345513964', 2),
+(6, 'luis', 'luis@gmal.com', 'lpoma', 'f1c3e3b5c970e5bc463525db077eb417d8cb046e', 1),
+(7, 'Juan Martinez', 'jmartin@gmail.com', 'jmartin', '03de6c570bfe24bfc328ccd7ca46b76eadaf4334', 0),
+(8, 'Admin', 'ad@gmail.com', 'admin', '7c4a8d09ca3762af61e59520943dc26494f8941b', 11);
 
 --
 -- Índices para tablas volcadas
@@ -90,7 +95,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-MODIFY `IdRol` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `IdRol` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --

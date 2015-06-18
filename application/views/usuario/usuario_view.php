@@ -6,19 +6,46 @@
 		<tr>
 			<th><label for="nombre">Nombre : </label></th>
 			<th><input type="text" name="nombre" id="nombre"></th>
+
 		</tr>
+		
 		<tr>
 			<th><label for="email">Email : </label></th>
 			<th><input type="text" name="email" id="email"></th>
+
 		</tr>
+		
 		<tr>
 			<th><label for="user">Nombre de Usuario : </label></th>
 			<th><input type="text" name="user" id="user"></th>
+
 		</tr>
+		
 		<tr>
 			<th><label for="password">Contraseña : </label></th>
 			<th><input type="text" name="password" id="password"></th>
+
 		</tr>
+		
+
+		<tr>
+			<th><label for="rol">Rol : </label></th>
+			<th>
+				<select class="combobox" name="IdRol">
+					<option value="">--Seleccione--</option>
+					<?php foreach ($lrol as $val) {
+						
+						
+						echo '<option value='.$val->IdRol.'>'.$val->Rol.'</option>';
+						
+					}?>
+					 
+				</select>
+			</th>
+
+		</tr>
+
+
 		<tr >
 			
 			<th colspan="2"><button id="submitrol" class="btn btn-success">Registrar</button></th>
@@ -27,27 +54,40 @@
 
 	<?php echo form_close(); ?>
 
+
 </div>
-<div align ="center">
+<hr>
+<div class="shor" align="center">
+
 	<table class="table table-bordered">
-		<tr>
-			<th>Id</th>
-			<th>Nombre</th>
-			<th>Email</th>
-			<th>Nombre de Usuario</th>
-			<th>Contraseña</th>
-		</tr>
+		<thead>
+			<tr class="title-table" >
+				<td>Id</td>
+				<td>Nombre</td>
+				<td>Email</td>
+				<td>Nombre de Usuario</td>
+				<td>Contraseña</td>
+				<td>Rol</td>
+				<td colspan="2">Accion</td>
+			</tr>
+		</thead>
+		<tbody>
 	<?php foreach ($record as $value) {
 		echo '<tr>';
-		echo '<th>'.$value->idusuario.'</th>';
-		echo '<th>'.$value->nombre.'</th>';
-		echo '<th>'.$value->email.'</th>';
-		echo '<th>'.$value->user.'</th>';
-		echo '<th>'.$value->password.'</th>';
-		echo '<th><button class="btn btn-danger">'.anchor('usuario/delete/'.$value->idusuario,'Eliminar').'</button></th>';
-		echo '<th><button class="btn btn-warning">'.anchor('usuario/edit/'.$value->idusuario,'Editar').'</button></th>';
+		echo '<td>'.$value->idusuario.'</td>';
+		echo '<td>'.$value->nombre.'</td>';
+		echo '<td>'.$value->email.'</td>';
+		echo '<td>'.$value->user.'</td>';
+		echo '<td>'.$value->password.'</td>';
+		echo '<td>'.$value->rol.'</td>';
+		echo '<td><button class="btn btn-danger">'.anchor('usuario/delete/'.$value->idusuario,'Eliminar').'</button></td>';
+		echo '<td><button class="btn btn-warning">'.anchor('usuario/edit/'.$value->idusuario,'Editar').'</button></td>';
 		echo '<tr>';
 	}?>
+		</tbody>
 	</table>
 </div>
+
+	
+
 <hr>

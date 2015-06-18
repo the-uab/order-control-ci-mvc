@@ -13,10 +13,9 @@ class Inicio extends CI_Controller {
 		$sesion['user']= "Bienvenido : ".$this->session->userdata('user');
 		
 		//$this->load->view('inicio_view');
-		 $this->load->view('header');
+		$this->load->view('header');
         $this->load->view('navbar',$sesion);
-        $this->load->view('banner');
-      
+      	$this->load->view('banner');
         $this->load->view('footer');
 	}
 	function verify(){

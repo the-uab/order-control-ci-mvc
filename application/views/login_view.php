@@ -2,8 +2,9 @@
 	
 	<?php echo form_open('login/verify'); ?>
 	<table>
-		<tr >
-			<th colspan="2"> <h3>Iniciar Sesion</h3></th>
+		<tr class="title-login" >
+			<th> </th>
+			<th> Iniciar Sesion</th>
 		</tr>
 		<tr>
 			<td><label for="usuario">Usuario : </label></td>

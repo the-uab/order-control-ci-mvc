@@ -12,8 +12,13 @@ class Usuario extends CI_Controller {
 	{
         $sesion['user']= "Bienvenido : ".$this->session->userdata('user');
         
-
         $value =array();
+       if($data = $this->roles_model->read_record())
+        {
+        $value['lrol']= $data;
+        }
+
+        
         if($data = $this->usuario_model->read_record())
         {
         $value['record']= $data;
@@ -28,7 +33,8 @@ class Usuario extends CI_Controller {
         $data = array('nombre'=>$this->input->post('nombre'),
             'email'=>$this->input->post('email'),
             'user'=>$this->input-> post('user'),
-            'password'=> sha1($this->input->post('password'))
+            'password'=> sha1($this->input->post('password')),
+            'IdRol'=>$this->input->post('IdRol'),
 
             );
 
@@ -71,7 +77,8 @@ class Usuario extends CI_Controller {
             'nombre'=>$this->input->post('nombre'),
             'email'=>$this->input->post('email'),
             'user'=>$this->input->post('user'),
-            'password'=>$this->input->post('password')
+            'password'=> sha1($this->input->post('password')),
+            'IdRol'=>$this->input->post('IdRol'),
             );
         if(!empty($data['nombre']) && !empty($data['email']) && !empty($data['user']) && !empty($data['password'])){
             $this->usuario_model->update_record($data);

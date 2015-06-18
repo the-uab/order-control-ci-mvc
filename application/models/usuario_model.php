@@ -7,8 +7,17 @@ class Usuario_model extends CI_Model {
     }
 
     function read_record(){
-        $query = $this->db->get('usuario');
-        return $query->result();
+        //$query = $this->db->get('usuario');
+        //return $query->result();
+
+        $query = $this->db
+        ->select("u.idusuario,u.nombre,u.email,u.user,u.password,r.rol")
+        ->from("usuario as u")
+        ->join("roles as r","u.IdRol = r.IdRol","inner")
+        ->get();
+          return $query->result();
+
+
     }
 
     function add_record($data){
