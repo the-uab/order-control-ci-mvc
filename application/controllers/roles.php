@@ -17,21 +17,58 @@ class Roles extends CI_Controller {
         {
         $value['record']= $data;
         }
+
+        
         $this->load->view('header');
         $this->load->view('navbar',$sesion);
         $this->load->view('roles/rol_view',$value);
         $this->load->view('footer');
+
+
+
 	}
 
     function create(){
         $data = array('rol'=>$this->input->post('rol'));
 
+        $this->form_validation->set_rules('rol', 'Rol', 'required|min_length[3]|alpha');
+
+        $this->form_validation->set_message('required','El campo %s es requerido');
+        $this->form_validation->set_message('min_length','El campo %s tiene que tener como minimo 3 caracteres');
+        $this->form_validation->set_message('alpha','El campo %s tiene no tiene que contener numeros');
+
+                if ($this->form_validation->run() == true)
+                {
+                         
+
+                          $this->form_validation->clear_field_data();
+                         $this->roles_model->add_record($data);
+                         echo "
+                            <script language='JavaScript'>
+                            alert('Se registro correctamente');
+                            </script>";
+                        
+                         
+                         
+                        
+                         
+                         
+
+                       
+
+
+
+                }
+                
+               
+
+        /*
+
         if(!empty($data['rol'])){
+
+
             $this->roles_model->add_record($data);
-            echo "
-                <script language='JavaScript'>
-                alert('Se registro correctamente');
-                </script>";
+           
 
         }else{
              echo "
@@ -39,9 +76,12 @@ class Roles extends CI_Controller {
                 alert('No deje ningun campo del formulario vacio');
                 </script>";
            // echo "No deje ningun campo del formulario vacio";
-        }
+        }*/
+
         $this->index();
+
     }
+
 
     function delete(){
         $this->roles_model->delete_record();

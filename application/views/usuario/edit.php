@@ -26,6 +26,22 @@
 			<th><label for="password">Contraseña : </label></th>
 			<th><input type="text" name="password" id="password" value="<?php echo $value->password; ?>"></th>
 		</tr>
+		<tr>
+			<th><label for="rol">Rol : </label></th>
+			<th>
+				<select class="combobox" name="IdRol">
+					<option value="">--Seleccione--</option>
+					<?php foreach ($lrol as $val) {
+						
+						
+						echo '<option value='.$val->IdRol.'>'.$val->Rol.'</option>';
+						
+					}?>
+					 
+				</select>
+			</th>
+
+		</tr>
 
 		<tr >
 			

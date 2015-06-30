@@ -15,7 +15,7 @@
 			<td><input type="password" name="password"></td>
 		</tr>
 		<tr>
-			<th colspan="2"><button id="submitrol" class="btn btn-success">Registrar</button></th>
+			<th colspan="2"><button id="submitrol" class="btn btn-success">Iniciar Sesion</button></th>
 		</tr>
 	</table>
 

@@ -29,9 +29,9 @@
 						<div class="col-md-6">
 							
 							<div class=" branding">
-								<img src="img/logo-footer.png" alt="Site title" class="logo-icon">
+								<img src="<?php echo base_url().'img/logo-footer.png' ?>" alt="Site title" class="logo-icon">
 								<h1 class="site-title"><a href="#">Project <span>SUAB</span></a></h1> 
-								<p class="copy">Derechos Reservados@2015 &copy; Project SUAB. designed by Skylar. All rights reserved</p>
+								<p class="copy">Copyright 2015 &copy; Project SUAB. designed by Skylar. All rights reserved</p>
 							</div> <!-- .branding -->
 
 							

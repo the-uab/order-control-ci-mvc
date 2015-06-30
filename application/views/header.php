@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>UAB</title>
+	<link rel="stylesheet" type="text/css" href="<?php //echo base_url().'css/bootstrap.css' ?>"/>
+	<link rel="stylesheet" type="text/css" href="<?php //echo base_url().'css/bootstrap.min.css' ?>"/>
+	<link rel="stylesheet" type="text/css" href="<?php //echo base_url().'css/bootstrap-responsive.css' ?>"/>
+	
+	
+	
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<div class="well">
+					<center><h2>Bienvenido al Sistema SUAB</h2></center>
+				</div>
+			</div>
+		</div>
+	-->
+
+
+	<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">

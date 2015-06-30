@@ -3,16 +3,18 @@
 <div align ="center">
 	<?php echo form_open('roles/create'); ?>
 	<table>
+		
 		<tr>
 			<th><label for="rol">Rol : </label></th>
-			<th><input type="text" name="rol" id="rol"></th>
-
+			<th><input type="text" name="rol" id="rol" value="<?php echo set_value('rol',''); ?>"></th>
+			<th class="text-danger"> <p><?php echo form_error('rol'); ?></p></th>
 		</tr>
-		
+		<br />
 		<tr >
 			
-			<th colspan="2"><button id="submitrol" class="btn btn-success">Registrar</button></th>
+			<td colspan="3" ><button id="submitrol" class="btn btn-success">Registrar</button></td>
 		</tr>
+		<br>
 	</table>
 
 	<?php echo form_close(); ?>
